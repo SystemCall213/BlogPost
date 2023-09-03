@@ -43,7 +43,7 @@ export default function Home() {
           const { data, error } = await supabase
             .from('blog_user')
             .select('name, is_author, user_id') 
-            .eq('email', user.email)
+            .ilike('email', `%${user.email}%`)
 
           if (data) {
             setUser(data[0]);
