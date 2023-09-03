@@ -11,7 +11,7 @@ import Comment from '../components/user_posts/Comment'
 import logo from '../assets/logo.png'
 import Image from 'next/image'
 
-export function formatTime(time: string) {
+function formatTime(time: string) {
   const inputDate = new Date(time);
   const formattedDate = `${inputDate.getDate()}/${inputDate.getMonth() + 1}/${inputDate.getFullYear()}`;
   const formattedTime = `${inputDate.getHours()}:${String(inputDate.getMinutes()).padStart(2, '0')}`;

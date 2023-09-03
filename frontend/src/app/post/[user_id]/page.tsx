@@ -5,9 +5,10 @@ import { useParams } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { supabase } from '../../../supabase/supabase'
 import Post from '../../../components/main/Post'
-import { formatTime } from  '../../page'
 import Comment from '../../../components/user_posts/Comment'
 import Link from 'next/link'
+
+
 
 export default function UserPosts() {
     const params = useParams()
@@ -106,6 +107,13 @@ export default function UserPosts() {
         } catch (error) {
             console.log(error)
         }
+    }
+
+    function formatTime(time: string) {
+        const inputDate = new Date(time);
+        const formattedDate = `${inputDate.getDate()}/${inputDate.getMonth() + 1}/${inputDate.getFullYear()}`;
+        const formattedTime = `${inputDate.getHours()}:${String(inputDate.getMinutes()).padStart(2, '0')}`;
+        return `${formattedDate} at ${formattedTime}`
     }
 
     return (
