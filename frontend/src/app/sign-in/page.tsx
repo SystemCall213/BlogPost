@@ -51,15 +51,11 @@ export default function SignIn() {
         
             if (error) {
                 console.error('Sign-in error:', error.message);
-              // Handle sign-in error, such as displaying an error message to the user.
             } else if (data) {
                 router.push('/')
-                console.log('Sign-in successful:', data);
-              // Redirect or update your UI as needed.
             }
             } catch (error) {
                 console.error('Error:', error);
-                // Handle other errors if necessary.
             }
 
     };

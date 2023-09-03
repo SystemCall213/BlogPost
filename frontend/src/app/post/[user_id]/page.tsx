@@ -32,7 +32,6 @@ export default function UserPosts() {
                     }
                     return accumulator;
                 }, []);
-                console.log(commentIds)
                 try {
                     const { data, error } = await supabase
                         .from('comment')
@@ -41,7 +40,6 @@ export default function UserPosts() {
         
                     if (data) {
                         setComments(data)
-                        console.log(data)
                     }
                 } catch (error) {
                     console.log(error)
@@ -77,11 +75,6 @@ export default function UserPosts() {
         fetchUserData()
     }, [params.user_id])
 
-    useEffect(() => {
-        console.log(posts)
-        console.log(comments)
-    }, [posts, comments])
-
     async function PostComment(post_id: string, i: number) {
         try {
             const { data, error } = await supabase
@@ -94,7 +87,6 @@ export default function UserPosts() {
                 .select()
 
             if (data) {
-                console.log(data)
                 const newCommentId = data[0].id;
                 const existingComments = posts[i].comments || [];
                 const updatedComments = [...existingComments, newCommentId];

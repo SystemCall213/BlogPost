@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { supabase } from '../../supabase/supabase'
 import { useState } from 'react'
+import { redirect } from 'next/navigation';
 import './page.css'
 
 function Copyright(props: any) {
@@ -52,21 +53,16 @@ export default function SignUp() {
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-
-        console.log(email + ", " + password)
-
         if (email === null || password === null) {
-            // Handle the case where email or password is null (optional)
             return;
         }
-
         try {
             
             let { data, error } = await supabase.auth.signUp({
                 email: email,
                 password: password,
                 options: {
-                    emailRedirectTo: 'http://loclhost:3000'
+                    emailRedirectTo: 'https://blog-post-bay-chi.vercel.app/'
                 }
             })
 
@@ -91,6 +87,7 @@ export default function SignUp() {
         } catch (error) {
             console.error('Error:', error);
         }
+        window.location.href = 'https://blog-post-bay-chi.vercel.app/'
     };
 
     return (

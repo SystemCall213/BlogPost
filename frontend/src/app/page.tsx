@@ -38,7 +38,6 @@ export default function Home() {
     async function fetchUserData() {
       try {
         const { data: { user } }  = await supabase.auth.getUser();
-        console.log(user)
         
         if (user) {
           const { data, error } = await supabase
@@ -73,7 +72,6 @@ export default function Home() {
               }
                 return accumulator;
               }, []);
-              console.log(commentIds)
               try {
                   const { data, error } = await supabase
                       .from('comment')
@@ -82,7 +80,6 @@ export default function Home() {
       
                   if (data) {
                       setComments(data)
-                      console.log(data)
                   }
               } catch (error) {
                   console.log(error)
@@ -114,7 +111,7 @@ export default function Home() {
                 <button onClick={handleLogout} className='make-post'>Log Out</button>
               </div>
             ) : (
-              <Link href="/sign-in">Sign in</Link>
+              <Link href="/sign-in" className='make-post'>Sign in</Link>
             )}
           </header>
           {user && (

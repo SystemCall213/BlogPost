@@ -34,7 +34,6 @@ export default function CreatePost({ updateCreatePost, user }: CreatePostProps) 
                         author_username: user.name,
                     }
                 );
-                console.log('yuppie!')
                 updateCreatePost(false)
             } catch (error) {
                 console.log(error)
