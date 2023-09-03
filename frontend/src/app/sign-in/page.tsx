@@ -19,7 +19,7 @@ function Copyright(props: any) {
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
             {'Copyright © '}
             <Link color="inherit" href="https://mui.com/">
-            Your Website
+                blog-post-bay-chi.vercel.app
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -114,11 +114,6 @@ export default function SignIn() {
                 Sign In
             </Button>
             <Grid container>
-                <Grid item xs>
-                <Link href="#" variant="body2">
-                    Forgot password?
-                </Link>
-                </Grid>
                 <Grid item>
                     <Link href="sign-up" variant="body2">
                         {"Don't have an account? Sign Up"}
