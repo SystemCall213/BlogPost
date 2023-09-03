@@ -1,0 +1,35 @@
+.post-main {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    margin-top: 2rem;
+    border: 2px solid grey;
+    border-radius: 6px;
+}
+
+.post-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.post-title {
+    font-size: 25px;
+    font: bold;
+}
+
+.post-footer {
+    margin-top: 10px;
+    font-size: 20px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.comment-button {
+    padding: 8px;
+    background: white;
+    border-radius: 8px;
+}

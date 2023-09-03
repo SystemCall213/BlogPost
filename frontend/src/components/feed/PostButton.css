@@ -1,0 +1,13 @@
+.post-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.make-post {
+    background-color: white;
+    padding: 8px;
+    border-radius: 12px;
+    border: 1px solid aqua;
+}

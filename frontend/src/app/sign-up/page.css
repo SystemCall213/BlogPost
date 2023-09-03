@@ -1,0 +1,14 @@
+.check-status {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button {
+    background: white;
+    border: 1px solid #1976d2;
+    padding: 8px;
+    font-size: 20px;
+    border-radius: 6px;
+    color: gray;
+}
